@@ -17,10 +17,17 @@ public class PersonagemUseCase {
 
         for (int i = 0; i < id.length(); i++) {
             if (!Character.isDigit(id.charAt(i))) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Id fora do formato!");
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id fora do formato!");
             }
         }
+
         return personagemGateway.getPersonagemById(id);
     }
 }
+
+
+
+
+
+
 

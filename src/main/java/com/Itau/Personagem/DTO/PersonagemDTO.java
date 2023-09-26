@@ -1,6 +1,7 @@
 package com.Itau.Personagem.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
