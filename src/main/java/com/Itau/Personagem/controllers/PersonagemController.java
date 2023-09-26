@@ -1,6 +1,5 @@
 package com.Itau.Personagem.controllers;
 
-import com.Itau.Personagem.DTO.PersonagemDTO;
 import com.Itau.Personagem.usecases.PersonagemUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +16,7 @@ public class PersonagemController {
 
         if (idPersonagem != null) {
 
-            return personagemUseCase.idENumero(idPersonagem);
-
+            return true;
         }
         return false;
     }

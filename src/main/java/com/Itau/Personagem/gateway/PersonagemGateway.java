@@ -10,7 +10,7 @@ public class PersonagemGateway {
     private final String API_URL = "https://rickandmortyapi.com/api/character/2";
     private RestTemplate restTemplate = new RestTemplate();
 
-    public PersonagemDTO getPersonagemById(int id) {
+    public PersonagemDTO getPersonagemById(String id) {
 
         String url = API_URL + id;
         PersonagemDTO personagem = restTemplate.getForObject(url, PersonagemDTO.class);
