@@ -8,12 +8,14 @@ import lombok.Setter;
 @Setter
 public class PersonagemDTO {
 
-    @JsonProperty
+    @JsonProperty("id")
+    String codigo;
+
+    @JsonProperty("name")
     String nome;
 
-    @JsonProperty
-    String id;
+    @JsonProperty("species")
+    String especie;
 
-
- }
+}
 

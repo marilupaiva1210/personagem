@@ -1,11 +1,17 @@
 package com.Itau.Personagem.usecases;
 
+import com.Itau.Personagem.DTO.PersonagemDTO;
+import com.Itau.Personagem.gateway.PersonagemGateway;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PersonagemUseCase {
 
-    public boolean idENumero(String id)  {
+    @Autowired
+    PersonagemGateway personagemGateway;
+
+    public PersonagemDTO idENumero(String id)  {
 
         boolean e = true;
 
@@ -14,9 +20,8 @@ public class PersonagemUseCase {
                 e = false;
                 break;
             }
-
         }
-        return e;
+        return personagemGateway.getPersonagemById(id);
     }
 }
 
