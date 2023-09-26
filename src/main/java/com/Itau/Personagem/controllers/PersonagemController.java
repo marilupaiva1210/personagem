@@ -2,6 +2,8 @@ package com.Itau.Personagem.controllers;
 
 import com.Itau.Personagem.usecases.PersonagemUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,13 +14,10 @@ public class PersonagemController {
     PersonagemUseCase personagemUseCase;
 
     @GetMapping("/personagens/{id}")
-    public boolean personagemGet(String idPersonagem) {
+    public ResponseEntity<String> personagemGet(String idPersonagem) {
 
-        if (idPersonagem != null) {
+        String nomePersonagem = String.valueOf(personagemUseCase.idENumero(idPersonagem));
 
-            return true;
-        }
-        return false;
+        return new ResponseEntity<String>("", HttpStatus.OK);
     }
 }
-
