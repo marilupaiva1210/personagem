@@ -29,7 +29,7 @@ public class PersonagemUseCase {
 
     private void verificarFamilia(String nome) {
 
-        if () {
+        if (nome != null && (nome.contains("Beth Smith") || nome.contains("Morty Smith") || nome.contains("Jerry Smith"))) {
 
             throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Pertencem à família Smith");
         }
