@@ -13,7 +13,9 @@ public class PersonagemUseCase {
     @Autowired
     PersonagemGateway personagemGateway;
 
-    public PersonagemDTO idENumero(String id)  {
+    public PersonagemDTO idENumero(String id) {
+
+        System.out.println(id);
 
         for (int i = 0; i < id.length(); i++) {
             if (!Character.isDigit(id.charAt(i))) {

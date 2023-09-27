@@ -1,7 +1,6 @@
 package com.Itau.Personagem.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +18,5 @@ public class PersonagemDTO implements Serializable {
 
     @JsonProperty("species")
     String especie;
-
 }
 
