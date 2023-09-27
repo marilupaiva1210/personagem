@@ -1,6 +1,5 @@
 package com.Itau.Personagem.usecases;
 
-import com.Itau.Personagem.DTO.PersonagemDTO;
 import com.Itau.Personagem.gateway.PersonagemGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,21 +8,31 @@ import org.springframework.web.server.ResponseStatusException;
 
 @Component
 public class PersonagemUseCase {
-
     @Autowired
     PersonagemGateway personagemGateway;
 
-    public PersonagemDTO idENumero(String id) {
-
-        System.out.println(id);
+    public String idENumero(String id) {
 
         for (int i = 0; i < id.length(); i++) {
             if (!Character.isDigit(id.charAt(i))) {
+
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id fora do formato!");
             }
         }
 
-        return personagemGateway.getPersonagemById(id);
+        String nome =  personagemGateway.getPersonagemById(id).getNome();
+
+        verificarFamilia(nome);
+
+        return nome;
+    }
+
+    private void verificarFamilia(String nome) {
+
+        if () {
+
+            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Pertencem à família Smith");
+        }
     }
 }
 

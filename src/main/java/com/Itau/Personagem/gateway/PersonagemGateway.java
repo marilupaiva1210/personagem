@@ -7,23 +7,15 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class PersonagemGateway {
 
-    private final String API_URL = "http://rickandmortyapi.com/api/character/";
+    private final String API_URL = "https://rickandmortyapi.com/api/character/";
     private RestTemplate restTemplate = new RestTemplate();
 
     public PersonagemDTO getPersonagemById(String id) {
 
-        try {
 
-            String url = API_URL + id;
-            PersonagemDTO personagem = restTemplate.getForObject(url, PersonagemDTO.class);
+               String url = API_URL + id;
+               PersonagemDTO personagem = restTemplate.getForObject(url, PersonagemDTO.class);
 
-            return personagem;
-
-        } catch (Exception e) {
-
-            System.out.println(e);
-        }
-
-        return null;
+               return personagem;
     }
 }

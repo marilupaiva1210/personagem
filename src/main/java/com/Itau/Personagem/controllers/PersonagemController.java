@@ -19,6 +19,6 @@ public class PersonagemController {
 
         String nomePersonagem = String.valueOf(personagemUseCase.idENumero(id));
 
-        return new ResponseEntity<String>("", HttpStatus.OK);
+        return new ResponseEntity<String>(nomePersonagem, HttpStatus.OK);
     }
 }
